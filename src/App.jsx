@@ -13,6 +13,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import BlogList from './pages/BlogList/BlogList'
+import BlogDetails from './pages/BlogDetails/BlogDetails'
 
 // services
 import * as authService from './services/authService'
@@ -81,6 +82,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <BlogList blogs={blogs} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/blogs/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <BlogDetails user={user} />
             </ProtectedRoute>
           }
         />
